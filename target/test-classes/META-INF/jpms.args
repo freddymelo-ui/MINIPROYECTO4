@@ -1,4 +1,0 @@
---patch-module
-com.example.MP4=_
---add-reads
-com.example.MP4=ALL-UNNAMED
