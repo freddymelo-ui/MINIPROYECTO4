@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12148525-3107-4274-b0ac-e481dd4d9cbe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_state.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game_state.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/PlacementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/PlacementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/controller/WelcomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/MachineAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/MachineAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/PlayerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/model/PlayerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/MP4/view/PlacementStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/MP4/view/PlacementStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/InstructionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/InstructionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/OpponentBoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/OpponentBoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/PlacementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/PlacementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/WelcomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/controller/WelcomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/HumanAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/HumanAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/MachineAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/MachineAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/PlayerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/PlayerAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Ship.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/model/Ship.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/utils/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/utils/ImageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/GameStage$GameStageHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/GameStage$GameStageHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/GameStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/GameStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/InstructionStage$InstructionStageHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/InstructionStage$InstructionStageHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/InstructionStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/InstructionStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/OpponentBoardStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/OpponentBoardStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/PlacementStage$GameStageHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/PlacementStage$GameStageHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/PlacementStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/PlacementStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/WelcomeStage$WelcomeStageHolder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/WelcomeStage$WelcomeStageHolder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/MP4/view/WelcomeStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/MP4/view/WelcomeStage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_board.ser" beforeDir="false" afterPath="$PROJECT_DIR$/test_board.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "salazar",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Juan David/IdeaProjects/MP4-POE/MINIPROYECTO4",
@@ -178,7 +144,7 @@
       <workItem from="1759357893139" duration="210000" />
       <workItem from="1759359381265" duration="260000" />
       <workItem from="1759724964887" duration="181000" />
-      <workItem from="1765761328198" duration="6537000" />
+      <workItem from="1765761328198" duration="8515000" />
     </task>
     <servers />
   </component>
