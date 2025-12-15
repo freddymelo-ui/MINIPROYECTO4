@@ -12,8 +12,19 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Utility responsible for saving and loading game snapshots.
+ * The save operation writes to a temporary file and moves it atomically to
+ * the final location to avoid partial/corrupt files.
+ */
 public class GameSaveManager {
 
+    /**
+     * Save the provided Game instance to the given file atomically.
+     * @param file destination file
+     * @param game game model to snapshot
+     * @throws IOException on I/O errors
+     */
     public static void saveGame(File file, Game game) throws IOException {
         if (file == null) throw new IllegalArgumentException("file is null");
         if (game == null) throw new IllegalArgumentException("game is null");
@@ -46,6 +57,13 @@ public class GameSaveManager {
         Files.move(tmp, target, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
     }
 
+    /**
+     * Load a Game from the given file containing a previously saved GameState.
+     * @param file source file
+     * @return reconstructed Game instance
+     * @throws IOException on I/O errors
+     * @throws ClassNotFoundException if snapshot classes cannot be resolved
+     */
     public static Game loadGame(File file) throws IOException, ClassNotFoundException {
         if (file == null) throw new IllegalArgumentException("file is null");
         if (!file.exists()) throw new FileNotFoundException(file.getAbsolutePath());

@@ -293,6 +293,7 @@ public class GameController {
 
     /**
      * Ends the game and displays the winner.
+     * Also removes saved state so reopening the app starts a fresh game.
      *
      * @param winner Winner's name.
      */

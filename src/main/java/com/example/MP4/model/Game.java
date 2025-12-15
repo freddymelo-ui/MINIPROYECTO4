@@ -1,6 +1,10 @@
 package com.example.MP4.model;
 
 // Class that represents the battleship game between a human player and a machine.
+/**
+ * Core game model coordinating human and machine players and tracking winner.
+ * Contains turn processing and victory detection logic.
+ */
 public class Game implements IGame {
     public final HumanAdapter human;
     public final MachineAdapter machine;
@@ -61,8 +65,8 @@ public class Game implements IGame {
     }
 
     /**
-     * Setter público limitado para restaurar el ganador al cargar un Game desde disco.
-     * Se deja público por simplicidad; su uso debe limitarse al código de carga de partidas.
+     * Public setter used only when restoring a saved game to set the winner.
+     * @param winner winner name ("Human" or "Machine")
      */
     public void setWinnerForLoad(String winner) {
         this.winner = winner;

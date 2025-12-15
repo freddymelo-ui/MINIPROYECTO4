@@ -36,10 +36,10 @@ public class PlacementController {
     }
 
     /**
-     * Configures the game when receiving a Game instance.
-     * Also initializes the boards and prepares the initial state of the game.
+     * Configures the controller with a Game instance. If the provided game
+     * already contains ships, existing board state is preserved (used when loading).
      *
-     * @param game Game instance provided by WelcomeController.
+     * @param game game model to use
      */
     public void setGame(Game game) {
         this.game = game;
@@ -164,10 +164,11 @@ public class PlacementController {
     }
 
     /**
-     * Handles the player's click to attempt placing a ship.
+     * Handle a click on the player's board to attempt placing the current ship.
+     * Saves the game automatically after a successful placement.
      *
-     * @param startRow Selected initial row.
-     * @param startCol Selected initial column.
+     * @param startRow row clicked
+     * @param startCol column clicked
      */
     private void handleCellClick(int startRow, int startCol) {
         if (currentShip == null) {
