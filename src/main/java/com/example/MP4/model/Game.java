@@ -60,4 +60,12 @@ public class Game implements IGame {
         return winner;
     }
 
+    /**
+     * Setter público limitado para restaurar el ganador al cargar un Game desde disco.
+     * Se deja público por simplicidad; su uso debe limitarse al código de carga de partidas.
+     */
+    public void setWinnerForLoad(String winner) {
+        this.winner = winner;
+    }
+
 }

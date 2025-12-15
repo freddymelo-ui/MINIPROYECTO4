@@ -4,6 +4,7 @@ import com.example.MP4.model.Board;
 import com.example.MP4.model.Game;
 import com.example.MP4.model.HumanAdapter;
 import com.example.MP4.model.MachineAdapter;
+import com.example.MP4.utils.CurrentGameHolder;
 import com.example.MP4.view.PlacementStage;
 import com.example.MP4.view.InstructionStage;
 import com.example.MP4.view.WelcomeStage;
@@ -30,6 +31,12 @@ public class WelcomeController {
     private final MachineAdapter machine = new MachineAdapter(machineBoard);
 
     private final Game game = new Game(human, machine);
+
+    public WelcomeController() {
+        // Register the newly created game so it can be saved on exit even if the user
+        // doesn't progress to the Game stage yet.
+        CurrentGameHolder.set(game);
+    }
 
     @FXML
     void HandleInstructions(ActionEvent event) throws IOException {

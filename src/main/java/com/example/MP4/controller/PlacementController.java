@@ -48,9 +48,13 @@ public class PlacementController {
         this.humanBoard = game.human.getBoard();
         this.machineBoard = game.machine.getBoard();
 
-        // Reset the initial state of both boards
-        this.humanBoard.reset();
-        this.machineBoard.reset();
+        // Only reset the boards if they are empty (fresh game); if loading a saved game
+        // we must preserve the existing board state so the player resumes where left off.
+        if (this.humanBoard.getShips().isEmpty() && this.machineBoard.getShips().isEmpty()) {
+            // Reset the initial state of both boards
+            this.humanBoard.reset();
+            this.machineBoard.reset();
+        }
 
         // Configure the first ship that the human player must place
         if (!game.human.getShips().isEmpty()) {
@@ -178,6 +182,13 @@ public class PlacementController {
             System.out.println(currentShip.getName() + " placed successfully!");
             updateOwnBoardUI(startRow, startCol, currentShip.getSize(), isHorizontal);
             proceedToNextShip();
+
+            // autosave after placing a ship
+            try {
+                com.example.MP4.utils.GameSaveManager.saveGame(new java.io.File("game_state.ser"), this.game);
+            } catch (java.io.IOException e) {
+                System.err.println("Failed to autosave after placing ship: " + e.getMessage());
+            }
         } else {
             System.out.println("Invalid placement. Try again.");
         }

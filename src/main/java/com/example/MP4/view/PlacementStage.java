@@ -70,6 +70,12 @@ public class PlacementStage extends Stage {
     public static PlacementStage getInstance() throws IOException {
         GameStageHolder.INSTANCE = GameStageHolder.INSTANCE != null ? GameStageHolder.INSTANCE : new PlacementStage();
 
+        // if there is an existing game in memory (e.g., loaded from disk), provide it to the controller
+        com.example.MP4.model.Game current = com.example.MP4.utils.CurrentGameHolder.get();
+        if (current != null) {
+            GameStageHolder.INSTANCE.getGameController().setGame(current);
+        }
+
         return GameStageHolder.INSTANCE;
     }
 

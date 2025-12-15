@@ -31,8 +31,12 @@ public class PlayerAdapter implements IPlayer {
 
     public PlayerAdapter(Board board) {
         this.board = board;
-        this.ships = board.getShips();
-        this.ships = initializeShips();
+        // If the board already contains ships (e.g. when loading a saved game), use them.
+        if (board.getShips() != null && !board.getShips().isEmpty()) {
+            this.ships = board.getShips();
+        } else {
+            this.ships = initializeShips();
+        }
     }
 
     @Override

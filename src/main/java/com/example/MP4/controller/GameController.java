@@ -4,6 +4,7 @@ import com.example.MP4.model.Board;
 import com.example.MP4.model.Game;
 import com.example.MP4.model.MachineAdapter;
 import com.example.MP4.model.Ship;
+import com.example.MP4.utils.GameSaveManager;
 import com.example.MP4.utils.ImageUtils;
 import com.example.MP4.view.OpponentBoardStage;
 import javafx.event.ActionEvent;
@@ -24,6 +25,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -46,8 +48,16 @@ public class GameController {
     public void setGame(Game game) {
         this.game = game;
         this.machinePlayer = game.machine; // Initialize the reference to MachineAdapter
+        com.example.MP4.utils.CurrentGameHolder.set(game);
         initializeHumanBoardUIWithImages();
         initializeMachineBoardUI();
+    }
+
+    /**
+     * Returns the currently set Game instance.
+     */
+    public Game getGame() {
+        return this.game;
     }
 
     /**
@@ -184,6 +194,13 @@ public class GameController {
         // Update machine board
         updateMachineBoardUI();
 
+        // Save after human shot so the state is persisted immediately
+        try {
+            GameSaveManager.saveGame(new File("game_state.ser"), game);
+        } catch (IOException e) {
+            System.err.println("Failed to autosave after human shot: " + e.getMessage());
+        }
+
         // Finish only if checkVictory confirms someone has won
         if (game.checkVictory()) {
             System.out.println("Victory detected after human shot.");
@@ -199,9 +216,16 @@ public class GameController {
      * The machine performs a shot on the human player's board.
      */
     private void handleMachineTurn() {
-        // Generate random shot coordinates from MachineAdapter
-        int row = (int) (Math.random() * 10);
-        int col = (int) (Math.random() * 10);
+        int row, col;
+        if (machinePlayer != null) {
+            int[] shot = machinePlayer.nextShot();
+            row = shot[0];
+            col = shot[1];
+        } else {
+            // fallback
+            row = (int) (Math.random() * 10);
+            col = (int) (Math.random() * 10);
+        }
 
         // Register the machine shot on the human board
         String result = game.processMachineShot(row, col);
@@ -209,6 +233,13 @@ public class GameController {
 
         // Update human board
         updateHumanBoardUI();
+
+        // Save after machine shot as well
+        try {
+            GameSaveManager.saveGame(new File("game_state.ser"), game);
+        } catch (IOException e) {
+            System.err.println("Failed to autosave after machine shot: " + e.getMessage());
+        }
 
         // Check if machine has won
         if (game.checkVictory()) {
@@ -269,6 +300,22 @@ public class GameController {
         resultLabel.setText(winner.equals("Human") ? "Congratulations, you won!" : "Sorry, the machine won this one");
         ownBoardGrid.setDisable(true);
         machineBoardGrid.setDisable(true);
+
+        // Remove saved game so that reopening starts a fresh game
+        try {
+            File f = new File("game_state.ser");
+            if (f.exists()) {
+                boolean deleted = f.delete();
+                if (!deleted) {
+                    System.err.println("Warning: could not delete save file on game end: " + f.getAbsolutePath());
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error deleting save file on game end: " + e.getMessage());
+        }
+
+        // Clear the in-memory reference as well
+        com.example.MP4.utils.CurrentGameHolder.clear();
     }
 
     /**
