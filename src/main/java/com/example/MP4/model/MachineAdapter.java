@@ -3,6 +3,10 @@ package com.example.MP4.model;
 import java.util.Random;
 
 // Adapts the Player class to represent a machine player
+/**
+ * Machine player implementation. Chooses shots using an internal strategy (nextShot).
+ * Extending classes may override behavior.
+ */
 public class MachineAdapter extends PlayerAdapter {
     public static final int BOARD_SIZE = 10; // Fixed board size
     private Random random;
@@ -14,6 +18,31 @@ public class MachineAdapter extends PlayerAdapter {
 
     public Board getBoard() {
         return super.getBoard();
+    }
+
+    /**
+     * Return a valid next shot position {row,col} that has not been fired yet.
+     * Attempts random probes first, then falls back to a linear scan.
+     */
+    public int[] nextShot() {
+        // Try random attempts first
+        for (int attempt = 0; attempt < 100; attempt++) {
+            int r = random.nextInt(BOARD_SIZE);
+            int c = random.nextInt(BOARD_SIZE);
+            if (!getBoard().isHit(r, c) && !getBoard().isMiss(r, c)) {
+                return new int[]{r, c};
+            }
+        }
+        // Fallback: linear scan for the first unshot cell
+        for (int r = 0; r < BOARD_SIZE; r++) {
+            for (int c = 0; c < BOARD_SIZE; c++) {
+                if (!getBoard().isHit(r, c) && !getBoard().isMiss(r, c)) {
+                    return new int[]{r, c};
+                }
+            }
+        }
+        // If everything is shot (shouldn't happen), return 0,0
+        return new int[]{0, 0};
     }
 
     /**
@@ -47,8 +76,8 @@ public class MachineAdapter extends PlayerAdapter {
 
     /**
      * Executes the machine player's turn. The row and column of the attack
-     * are generated randomly.
-     * 
+     * are provided externally and applied to the opponent board.
+     *
      * @return A message indicating the result of the attack ("miss", "hit", or
      *         "sunk").
      */
